@@ -8,18 +8,18 @@ public class PlayerTest {
     @Test
     public void should_find_babylone_is_the_nearest(){
 
-        Player.position = new Player.Position(1,2);
+        Player.Queen myQueen = new Player.Queen(1,2);
 
         Player.Site babylone = new Player.Site(1,15,30,2);
-        Player.Site carthage = new Player.Site(1,50,200,2);
-        Player.Site alexandrie = new Player.Site(1,600,500,2);
+        Player.Site carthage = new Player.Site(2,50,200,2);
+        Player.Site alexandrie = new Player.Site(3,600,500,2);
 
         ArrayList<Player.Site> sites = new ArrayList<>();
         sites.add(babylone);
         sites.add(carthage);
         sites.add(alexandrie);
 
-        Player.Site nearestSite = Player.findNearestSite(Player.position, sites);
+        Player.Site nearestSite = Player.findNearestSite(myQueen.position, sites);
 
         Assertions.assertThat(nearestSite).isEqualTo(babylone);
 
@@ -28,18 +28,18 @@ public class PlayerTest {
     @Test
     public void should_find_alexendrie_is_the_nearest(){
 
-        Player.position = new Player.Position(1,2);
+        Player.Queen myQueen = new Player.Queen(1,2);
 
         Player.Site babylone = new Player.Site(1,15,30,2);
-        Player.Site carthage = new Player.Site(1,50,200,2);
-        Player.Site alexandrie = new Player.Site(1,1,1,2);
+        Player.Site carthage = new Player.Site(2,50,200,2);
+        Player.Site alexandrie = new Player.Site(3,1,1,2);
 
         ArrayList<Player.Site> sites = new ArrayList<>();
         sites.add(babylone);
         sites.add(carthage);
         sites.add(alexandrie);
 
-        Player.Site nearestSite = Player.findNearestSite(Player.position, sites);
+        Player.Site nearestSite = Player.findNearestSite(myQueen.position, sites);
 
         Assertions.assertThat(nearestSite).isEqualTo(alexandrie);
 
